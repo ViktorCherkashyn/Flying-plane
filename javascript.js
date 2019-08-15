@@ -26,6 +26,8 @@ document.addEventListener("keydown", moveUp);
 	function moveUp(){
 		yPos -= 25;
 		fly.play();
+			if (yPos < 0) yPos = 0;
+    		fly.play();
 	}
 
 	var mounth = [];
@@ -79,7 +81,7 @@ function draw() {
 	ctx.drawImage(fg, 0, cvs.height - fg. height, 960,150);
 	ctx.drawImage(aircraft, xPos, yPos, ); 
 	yPos += grav;
-	ctx.fillStyle = "#000";
+	ctx.fillStyle = "#008000";
 	ctx.font = "30px Verdana";
 	ctx.fillText("Счет: " + score, 10, cvs.height - 20);
 	requestAnimationFrame(draw);
